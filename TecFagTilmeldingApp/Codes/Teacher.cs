@@ -13,9 +13,6 @@ internal class Teacher : Person
 
     public Teacher(string? firstName, string? lastName, DateTime birthDate, string? department) : base (firstName, lastName, birthDate)
     {
-        PersonalInfo = new() { FirstName = firstName, LastName = lastName };
-        BirthDate = birthDate;
-        Age = new AgeConverter(birthDate).Age;
         Department = department;
     }
 }
