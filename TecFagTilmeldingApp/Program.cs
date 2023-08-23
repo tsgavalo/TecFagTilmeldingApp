@@ -4,6 +4,8 @@ using TecFagTilmeldingApp.Codes;
 using TecFagTilmeldingApp.Generics;
 using TecFagTilmeldingApp.Models;
 
+#region sound player
+
 //while (true)
 //{
 //    Console.Write("\nIndtast tal 1 for at afspille lyden: ");
@@ -23,6 +25,8 @@ using TecFagTilmeldingApp.Models;
 //        Console.Clear();
 //    }
 //}
+
+#endregion
 
 Teacher? niels = new("Niels", "Olesen", new DateTime(1971, 2, 23), "CIT");
 Teacher? henrik = new("Henrik", "Paulsen", new DateTime(1975, 9, 13), "CIT");
@@ -124,31 +128,10 @@ while (true)
 
     Console.WriteLine("Vil du forsætte: [y/n]");
     string isContinue = Console.ReadLine();
+    Console.Clear();
     if (isContinue.ToLower() == "n")
     {
-        Console.Clear();
         break;
     }
-    else
-    {
-        Console.Clear();
-    }
 }
-
-
-
-
-
-//Bil audi = new("Audi", "A6", 2.5);
-//Cykel cykel = new("Avenue", "City bike", "165 - 170 cm");
-
-
-
-
-
-//Person p = new Student("Patrik", "Nielsen", new DateTime(2002, 6, 14));
-//Student p2 = new Student("Patrik", "Nielsen", new DateTime(2002, 6, 14));
-
-//Person p3 = new Teacher("Niels", "Olesen", new DateTime(2002, 6, 14), "CIT");
-//Teacher p4 = new Teacher("Niels", "Olesen", new DateTime(2002, 6, 14), "CIT");
 
