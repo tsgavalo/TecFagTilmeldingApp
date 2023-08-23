@@ -7,7 +7,9 @@ using TecFagTilmeldingApp.Models;
 
 namespace TecFagTilmeldingApp.Codes;
 
-internal class Person
+// Abstract er tilføjet for at man ikke kan istantierer en base klasse. Og
+// denne klasse er base klasse for Teacher og Student.
+internal abstract class Person
 {
     public PersonModel? PersonalInfo { get; set; }
     public DateTime BirthDate { get; set; }
@@ -18,5 +20,23 @@ internal class Person
         PersonalInfo = new() { FirstName = firstName, LastName = lastName };
         BirthDate = birthDate;
         Age = new AgeConverter(birthDate).Age;
+    }
+
+    /// <summary>
+    /// Brug af protected modifier for at metoden er "public" internt i arven
+    /// men private for alle andre types(klasse).
+    /// </summary>
+    /// <returns></returns>
+    protected string ShowFullName()
+    {
+        return $"{PersonalInfo.FirstName} {PersonalInfo.LastName}";
+    }
+
+    protected abstract string ShowAllInfo();
+    
+    
+    protected virtual string ShowAllInfo2()
+    {
+        return $"{PersonalInfo.FirstName} {PersonalInfo.LastName}";
     }
 }

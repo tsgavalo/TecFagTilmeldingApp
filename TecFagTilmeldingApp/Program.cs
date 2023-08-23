@@ -2,12 +2,17 @@
 using TecFagTilmeldingApp.Generics;
 using TecFagTilmeldingApp.Models;
 
+Person student2 = new Student("Patrik", "Nielsen", new DateTime(1971, 2, 23));
+Person teacher2 = new Teacher("Patrik", "Nielsen", new DateTime(1971, 2, 23), "CIT");
+
 Teacher? niels = new("Niels", "Olesen", new DateTime(1971, 2, 23), "CIT");
 Teacher? henrik = new("Henrik", "Paulsen", new DateTime(1975, 9, 13), "CIT");
 Teacher? jack = new("Jack", "Baltzer", new DateTime(1986, 1, 20), "CIT");
 Teacher? bo = new("Bo", "Elbæk", new DateTime(1965, 8, 3), "CIT");
 
 Course grundlæggendeProgrammering = new("Grundlæggende programmering", niels.PersonalInfo);
+
+
 Course oop = new("OOP", niels.PersonalInfo);
 Course studieTeknik = new("Studieteknik", niels.PersonalInfo);
 Course netværk = new("Netværk", henrik.PersonalInfo);
@@ -43,7 +48,7 @@ while (true)
     for (int i = 0; i < courses.Count; i++)
     {
         Course item = courses[i];
-        Console.WriteLine($"Fag id: {i+1}, fag navn: {item.Name}");
+        Console.WriteLine($"Fag id: {i++}, fag navn: {item.Name}");
     }
     
     Console.Write("Angive fag id: ");

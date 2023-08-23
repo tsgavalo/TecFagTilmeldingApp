@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TecFagTilmeldingApp.Generics
 {
-    internal class Bil : Kørtøj
+    internal sealed class Bil : Kørtøj
     {
         public double MotorStørrelse { get; set; }
 

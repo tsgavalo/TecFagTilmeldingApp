@@ -17,4 +17,31 @@ internal class Course
         Name = name;
         Teacher = teacher;
     }
+
+    /// <summary>
+    /// Denne metode har en metode signatur som følgende: string
+    /// </summary>
+    /// <returns></returns>
+    public string WriteText()
+    {
+        return "Hello world!";
+    }
+
+    /// <summary>
+    /// Denne metode har en metode signatur som følgende: string, string
+    /// </summary>
+    /// <returns></returns>
+    public string WriteText(string valueToDisplay)
+    {
+        return $"Hello {valueToDisplay}!";
+    }
+
+    /// <summary>
+    /// Denne metode har en metode signatur som følgende: string, string, int
+    /// </summary>
+    /// <returns></returns>
+    public string WriteText(string valueToDisplay, int alder)
+    {
+        return $"Hello {valueToDisplay}!, du er {alder.ToString()} år gammel.";
+    }
 }

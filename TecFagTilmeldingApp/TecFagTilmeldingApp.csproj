@@ -7,4 +7,22 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Animals\cat.wav" />
+    <None Remove="Animals\dog.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Animals\cat.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Animals\dog.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Windows.Extensions" Version="7.0.0" />
+  </ItemGroup>
+
 </Project>
