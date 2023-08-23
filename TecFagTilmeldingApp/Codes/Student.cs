@@ -15,6 +15,20 @@ internal sealed class Student : Person
         string defaultInfo = ShowAllInfo2();
     }
 
+    public override List<string> GetInfo(List<Enrollment> enrollments)
+    {
+        List<string> info = new();
+        foreach (Enrollment enrollment in enrollments)
+        {
+            if (enrollment.Student.PersonalInfo.FirstName == PersonalInfo.FirstName && enrollment.Student.PersonalInfo.LastName == PersonalInfo.LastName)
+            {
+                info.Add(enrollment.Course.Name);
+            }
+        }
+
+        return info;
+    }
+
     protected override string ShowAllInfo()
     {
         return $"{PersonalInfo.FirstName} {PersonalInfo.LastName}";

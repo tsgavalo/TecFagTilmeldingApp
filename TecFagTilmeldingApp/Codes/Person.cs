@@ -22,6 +22,8 @@ internal abstract class Person
         Age = new AgeConverter(birthDate).Age;
     }
 
+    public abstract List<string> GetInfo(List<Enrollment> enrollments);
+
     /// <summary>
     /// Brug af protected modifier for at metoden er "public" internt i arven
     /// men private for alle andre types(klasse).

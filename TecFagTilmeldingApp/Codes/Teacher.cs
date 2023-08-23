@@ -18,6 +18,20 @@ internal class Teacher : Person
         string defaultInfo = ShowAllInfo2();
     }
 
+    public override List<string> GetInfo(List<Enrollment> enrollments)
+    {
+        List<string> info = new();
+        foreach (Enrollment enrollment in enrollments)
+        {
+            if (enrollment.Course.Teacher.FirstName == PersonalInfo.FirstName && enrollment.Course.Teacher.LastName == PersonalInfo.LastName)
+            {
+                info.Add(enrollment.Course.Name);
+            }
+        }
+
+        return info;
+    }
+
     /// <summary>
     /// Oprindlig metode ligger i base klassen og er en abstrakt metode.
     /// </summary>

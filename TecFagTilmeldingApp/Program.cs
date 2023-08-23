@@ -1,9 +1,28 @@
-﻿using TecFagTilmeldingApp.Codes;
+﻿using System.Collections.Generic;
+using System.Numerics;
+using TecFagTilmeldingApp.Codes;
 using TecFagTilmeldingApp.Generics;
 using TecFagTilmeldingApp.Models;
 
-Person student2 = new Student("Patrik", "Nielsen", new DateTime(1971, 2, 23));
-Person teacher2 = new Teacher("Patrik", "Nielsen", new DateTime(1971, 2, 23), "CIT");
+//while (true)
+//{
+//    Console.Write("\nIndtast tal 1 for at afspille lyden: ");
+//    string talInput = Console.ReadLine();
+//    if (talInput == "1")
+//    {
+//        string myCurrentDer = System.IO.Directory.GetCurrentDirectory();
+//        string appDir = System.IO.Path.Combine(myCurrentDer, "SoundTest");
+//        appDir = System.IO.Path.Combine(appDir, "phone.wav");
+
+//        System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer();
+//        soundPlayer.SoundLocation = appDir;
+//        soundPlayer.Play();
+//    }
+//    else
+//    {
+//        Console.Clear();
+//    }
+//}
 
 Teacher? niels = new("Niels", "Olesen", new DateTime(1971, 2, 23), "CIT");
 Teacher? henrik = new("Henrik", "Paulsen", new DateTime(1975, 9, 13), "CIT");
@@ -11,8 +30,6 @@ Teacher? jack = new("Jack", "Baltzer", new DateTime(1986, 1, 20), "CIT");
 Teacher? bo = new("Bo", "Elbæk", new DateTime(1965, 8, 3), "CIT");
 
 Course grundlæggendeProgrammering = new("Grundlæggende programmering", niels.PersonalInfo);
-
-
 Course oop = new("OOP", niels.PersonalInfo);
 Course studieTeknik = new("Studieteknik", niels.PersonalInfo);
 Course netværk = new("Netværk", henrik.PersonalInfo);
@@ -48,7 +65,7 @@ while (true)
     for (int i = 0; i < courses.Count; i++)
     {
         Course item = courses[i];
-        Console.WriteLine($"Fag id: {i++}, fag navn: {item.Name}");
+        Console.WriteLine($"Fag id: {i+1}, fag navn: {item.Name}");
     }
     
     Console.Write("Angive fag id: ");
@@ -83,6 +100,27 @@ while (true)
 
     Enrollment enrolledStudent = new (tilmeldteElev, valgteFag);
     enrollments.Add(enrolledStudent);
+
+    Console.WriteLine("\nLæser fra abstrakt metode: GetInfo");
+    List<string> infos = tilmeldteElev.GetInfo(enrollments);
+    foreach(string info in infos)
+    {
+        Console.WriteLine("Elev er tilmeldt: " + info);
+    }
+
+    List<string> infosTeacher = bo.GetInfo(enrollments);
+    if(infosTeacher.Count > 0)
+    {
+        foreach (string info in infosTeacher)
+        {
+            Console.WriteLine("Læreren skal undervises i fag: " + info);
+        }
+    }
+    else
+    {
+        Console.WriteLine("Ingen elev er tilmed et fag som læren er læreren for.");
+    }
+
 
     Console.WriteLine("Vil du forsætte: [y/n]");
     string isContinue = Console.ReadLine();
