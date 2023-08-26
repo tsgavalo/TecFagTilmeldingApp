@@ -8,17 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Øvelse\Animals\cat.wav" />
-    <None Remove="Øvelse\Animals\dog.wav" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Øvelse\Animals\cat.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Øvelse\Animals\dog.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Compile Remove="Øvelse\**" />
+    <EmbeddedResource Remove="Øvelse\**" />
+    <None Remove="Øvelse\**" />
   </ItemGroup>
 
   <ItemGroup>
