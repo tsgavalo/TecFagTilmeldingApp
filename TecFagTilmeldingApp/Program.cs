@@ -3,6 +3,7 @@ using System.Numerics;
 using TecFagTilmeldingApp.Codes;
 using TecFagTilmeldingApp.Generics;
 using TecFagTilmeldingApp.Models;
+using TecFagTilmeldingApp.Øvelse.Animals;
 
 #region sound player
 
