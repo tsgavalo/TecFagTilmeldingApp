@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Numerics;
+using System.Reflection.PortableExecutable;
 using TecFagTilmeldingApp.Codes;
+using TecFagTilmeldingApp.Exceptions;
 using TecFagTilmeldingApp.Generics;
 using TecFagTilmeldingApp.Models;
-using TecFagTilmeldingApp.Øvelse.Animals;
+
 
 #region sound player
 
